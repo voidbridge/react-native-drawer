@@ -162,7 +162,7 @@ export default class Drawer extends Component {
       top: 0,
     }, {borderWidth:0}, this.props.styles.drawer)
 
-    if (props.initializeOpen || props.open) { // open
+    if (props.initializeOpen) { // open
       this._open = true
       this._left = fullWidth - this._offsetOpen
       styles.main[this.props.side] = 0
@@ -176,6 +176,11 @@ export default class Drawer extends Component {
       if (props.type === 'static') styles.drawer[this.props.side] = 0
       if (props.type === 'overlay') styles.drawer[this.props.side] = this._offsetClosed + this._offsetOpen - fullWidth
       if (props.type === 'displace') styles.drawer[this.props.side] = - fullWidth + this._offsetClosed + this._offsetOpen
+    }
+
+    if (props.open)
+    {
+      this._open = true;
     }
 
     if (this.main) {
