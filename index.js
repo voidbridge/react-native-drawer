@@ -181,6 +181,7 @@ export default class Drawer extends Component {
     if (props.open)
     {
       this._open = true;
+      this._syncAfterUpdate = true;
     }
 
     if (this.main) {
